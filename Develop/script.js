@@ -1,31 +1,28 @@
-var currentDate = moment().format("MMMM Do YYYY, h:mm:ss a");
-console.log(currentDate);
 
+
+var currentDate = moment().format("MMMM Do YYYY, h:mm a");
 $("#currentDay").text(currentDate);
- 
 
-console.log($("#9am .description"));
+$(document).ready(function () {
 
-console.log(localStorage.getItem("9am"));
-$("#9am .description").val(localStorage.getItem("9am"));
+    $(".saveBtn").on("click", function (event) {
+        event.preventDefault();
 
-$("#10am .description").val(localStorage.getItem("10am"));
+        var textAreaval = $(this).siblings(".description").val();
+        var timeBlock = $(this).parent().attr('id');
 
-$("#10am .description").val(localStorage.getItem("10am"));
-$("#10am .description").val(localStorage.getItem("10am"));
-//when a user enters text in textarea and clicks on save buttopn you want an event listenere to listen for that click
-// var eventsContainer = [];
-// for(i=0, i < 0, i++)
-// and then grab that value
-//and save it to locl sdtorage
-//for unique
+        localStorage.setItem(timeBlock, textAreaval);
 
-// 
-$(".saveBtn").on("click", function(event){
-    event.preventDefault();
-    // console.log(this);
- var textAreaval = $(this).siblings(".description").val();
- var timeBlock = $(this).parent().attr('id');
- console.log(timeBlock);
-    localStorage.setItem(timeBlock, textAreaval);
-});
+    });
+
+
+    function tracKtime() {
+        var currentHour = moment().hour();
+
+        $(".time-block").each(function () {
+            var timeBlock = parseInt($(this).atrr("id").split("hour")[1]);
+        })
+    }
+
+
+})
