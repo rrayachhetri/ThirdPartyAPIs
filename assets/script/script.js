@@ -21,8 +21,26 @@ $(document).ready(function () {
 
         $(".time-block").each(function () {
             var timeBlock = parseInt($(this).atrr("id").split("hour")[1]);
+
+            if (timeBlock < currentHour) {
+                $(this).removeClass("future");
+                $(this).removeClass("present");
+                $(this).addClass("past");
+            }
+
+            else if (timeBlock === currentHour) {
+                $(this).removeClass("future");
+                $(this).removeClass("past");
+                $(this).addClass("present");
+            }
+
+            else {
+                $(this).removeClass("past");
+                $(this).removeClass("present");
+                $(this).addClass("future");
+            }
         })
     }
 
-
+  tracKtime();
 })
