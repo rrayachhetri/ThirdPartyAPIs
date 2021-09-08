@@ -1,7 +1,7 @@
 var currentDate = moment().format("MMMM Do YYYY, h:mm a");
 $("#currentDay").text(currentDate);
 
-$(document).ready(function () {
+$().ready(function () {
 
     $(".saveBtn").on("click", function (event) {
         event.preventDefault();
