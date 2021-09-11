@@ -9,6 +9,7 @@
 - I WANT to add important events to a daily planner
 - SO THAT I can manage my time effectively
 
+Deployed app: https://rrayachhetri.github.io/Work-Day-Scheduler/
 
 ## Acceptance Criteria
 - the current day is displayed at the top of the calendar
